@@ -1,10 +1,10 @@
 /*
-
-   Ian Johnson -- 2-2-2018 -- CS370 Lab3
-   Code pulled from: http://forgetcode.com/C/101-Symbol-table
-   This code implements a symbol table. The table is searchable 
-   and has several manipulative functions.
-
+*******************************************************************************
+*  Ian Johnson -- 2-2-2018 -- CS370 Lab3
+*  Code pulled from: http://forgetcode.com/C/101-Symbol-table
+*  This code implements a symbol table using a linked list-esqe data structure. 
+*  The table is searchable and has several manipulative functions.
+*******************************************************************************
 */
 
 // include statements for necessary code libraries
