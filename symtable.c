@@ -1,11 +1,16 @@
 /*
-*******************************************************************************
+******************************************************************************
+*
 *  Ian Johnson -- 2-2-2018 -- CS370 Lab3
 *  Code pulled from: http://forgetcode.com/C/101-Symbol-table
 *  This code implements a symbol table using a linked list-esqe data structure. 
-*  The table is searchable and has several manipulative functions.
-*******************************************************************************
+*  The table is searchable and has several manipulative functions. Comments
+*  have been added to describe the basic structure and implementations of
+*  the various functions.
+*
+******************************************************************************
 */
+
 
 // include statements for necessary code libraries
 #include<stdio.h>
@@ -15,7 +20,9 @@
 #include<stdlib.h>
 
 /*
-    Function prototypes
+***************************
+*  Function prototypes
+***************************
 */
 int size = 0;
 void Insert();
@@ -33,6 +40,17 @@ struct SymbTab
 };
 struct SymbTab *first, *last;
 
+
+/*
+********************************************************************
+*
+*  main() function: displays the available options to the user,
+*  gets input from the user (which option they would like to use),
+*  and then calls the corresponding symbol table function based on
+*  that input.
+*  
+********************************************************************
+*/
 void main()
 {
     int op, y;
@@ -74,6 +92,17 @@ void main()
 
 }  /* and of main */
 
+
+/*
+***********************************************************
+*
+*  Insert() function: performs a check to make sure the
+*  current label does not exist in the table. if label does
+*  not exist, space is allocated for a struct and added to
+*  the table. 
+*
+***********************************************************
+*/
 void Insert()
 {
     int n;
@@ -108,6 +137,15 @@ void Insert()
     printf("\n\tLabel inserted\n");
 }
 
+
+/*
+*********************************************************
+*
+*  Display() function: displays the entire symbol table
+*  in its current state.
+*
+*********************************************************
+*/
 void Display()
 {
     int i;
@@ -121,6 +159,16 @@ void Display()
     }
 }
 
+
+/*
+****************************************************************
+*
+*  Search() function: searches symtable for a label specified
+*  by the user. returns 1 if label is found, 0 if the label 
+*  is not found. 
+*
+****************************************************************
+*/
 int Search(char lab[])
 {
     int i, flag = 0;
@@ -135,6 +183,16 @@ int Search(char lab[])
     return flag;
 }
 
+
+/*
+****************************************************************
+*
+*  Modify() function: allows user to change label and address
+*  of a struct in the symtable. after modification is made, the
+*  entire symtable is displayed.
+*
+****************************************************************
+*/
 void Modify()
 {
     char l[10], nl[10];
@@ -216,6 +274,17 @@ void Modify()
 }
 
 
+/*
+***********************************************************
+*
+*  Delete() function: deletes a struct by manipulating
+*  the next* value of the struct in the table prior to
+*  the one being deleted to point to the struct following
+*  the one being deleted (leaving the deleted struct 
+*  stranded without anything pointing to it)
+*
+***********************************************************
+*/
 void Delete()
 {
     int a;
